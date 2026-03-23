@@ -1,3 +1,14 @@
-# MY REPO FOR PROJECTS
-## HELLO MY FRIENDS, THATS MY REPO! THIS REPO CONTAINS ALL MY PROJECTS WRITTEN IN RUST FROM START TO FINISH OF MY RUST LEARNING
-## HAVE A NICE DAY FOLK!
+# 🦀 Rust Learning Journey
+
+> **HELLO MY FRIENDS, THATS MY REPO!**
+> This repo contains all my projects written in Rust from start to finish of my Rust learning.
+
+---
+
+### 💻 Environment
+* **OS:** Arch Linux / Void / Mint
+* **Tools:** Cargo, Rustup, Git
+* **Focus:** Ownership, Memory Management, System Programming
+
+---
+## 🚀 HAVE A NICE DAY FOLK!
