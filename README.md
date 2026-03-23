@@ -3,7 +3,13 @@
 <p align="center">
   <img src="https://img.shields.io/badge/rust-%23E57324.svg?style=for-the-badge&logo=rust&logoColor=white" />
   <img src="https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Void%20Linux-478061?style=for-the-badge&logo=voidlinux&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/code%20style-clippy-insignificant" />
+  <img src="https://img.shields.io/badge/safety-safe-%23000000" />
+  <img src="https://img.shields.io/badge/built%20with-cargo-red" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" />
 </p>
 
 <p align="center">
@@ -13,23 +19,19 @@
 
 ---
 
-### ⚡ Quick Status
-- **Current Goal:** Mastering Memory Management & Systems Programming
-- **Progress:** `██████████░░░░░░░░░░ 50%`
-- **Environment:** `Arch` / `Void` / `Mint`
+### 🛠 Tech Stack & Standards
+* **Linter:** `Clippy` (для чистого и эффективного кода)
+* **Formatter:** `rustfmt` (стандарт оформления Rust)
+* **Safety:** `100% Safe Rust` (без `unsafe` блоков)
+* **OS:** `Arch` / `Void` / `Mint`
 
 ---
 
-### 🛠 Tech Stack
-- **Language:** `Rust` (Ownership, Borrowing, Match)
-- **Tools:** `Cargo`, `Git`, `CLI Utilities`
-
----
-
-<details>
-<summary><b>🎵 Coding Vibe (Click to expand)</b></summary>
-Listening to <i>Post-punk / Indie / Hyperpop</i> while writing code.
-</details>
+### 📈 Roadmap
+- [x] Основы за 17 дней
+- [x] CLI Explorer (File System)
+- [ ] Многопоточность (Threads)
+- [ ] Сетевой стек (Tokio/Async)
 
 ---
 
