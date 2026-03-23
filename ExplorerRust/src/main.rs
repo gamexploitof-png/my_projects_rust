@@ -35,6 +35,21 @@ fn mk_file(path:&str, name:&str){
     
     
 }
+fn rm_dir(path:&str, name:&str){
+    let mut path_file:String = format!("{path}/{name}");
+    match fs::remove_dir(&path_file) {
+        Ok(_) => println!("Sucessfully removed file {name} at {path}"),
+        Err(err) => println!("{err}"),
+    }
+}
+fn rm_file(path:&str, name:&str){
+    let mut path_file:String = format!("{path}/{name}");
+    match fs::remove_file(&path_file) {
+        Ok(_) => println!("Sucessfully removed file {name} at {path}"),
+        Err(err) => println!("{err}"),
+    }
+}
+
 fn explorer(){
     loop{
         let mut input:String = String::new();
@@ -46,7 +61,9 @@ fn explorer(){
         1. Read dir 
         2. Make dir
         3. Read file
-        4. Make file"#);
+        4. Make file
+        5. Delete dir
+        6. Delete file"#);
         io::stdin().read_line(&mut input);
         choose = input.trim().parse().expect("Not a number!");
         
@@ -86,6 +103,28 @@ fn explorer(){
                 io::stdin().read_line(&mut input);
                 name = input.trim().to_string();
                 mk_file(&path,&name);
+            },
+            5 => {
+                println!("Enter path: ");
+                input.clear();
+                io::stdin().read_line(&mut input);
+                path = input.trim().to_string();
+                println!("Enter name: ");
+                input.clear();
+                io::stdin().read_line(&mut input);
+                name = input.trim().to_string();
+                rm_dir(&path,&name);
+            },
+            6 => {
+                println!("Enter path: ");
+                input.clear();
+                io::stdin().read_line(&mut input);
+                path = input.trim().to_string();
+                println!("Enter name: ");
+                input.clear();
+                io::stdin().read_line(&mut input);
+                name = input.trim().to_string();
+                rm_file(&path,&name);
             },
             _ => println!("Invalid number!"),
         }
