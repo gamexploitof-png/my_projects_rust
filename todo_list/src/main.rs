@@ -1,4 +1,4 @@
-use std::io;
+use std::{io, usize};
 
 #[derive(Debug)]
 struct Task {
@@ -25,6 +25,14 @@ fn remove(todo_list: &mut Vec<Task>, index: usize) {
     }
 }
 
+fn mark_done(todo_list: &mut Vec<Task>, index: usize) {
+    if index < todo_list.len() {
+        
+        todo_list[index].done = true;
+    } else {
+        println!("Нет задачи с таким номером!");
+    }
+}
 
 fn print_list(todo_list: &Vec<Task>) {
     if todo_list.is_empty() {
@@ -45,7 +53,8 @@ fn print_list(todo_list: &Vec<Task>) {
 fn read_option() -> i32 {
     println!("\n1. Добавить туду");
     println!("2. Удалить туду");
-    println!("3. Выйти");
+    println!("3. Выполнить туду");
+    println!("4. Выйти");
 
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
@@ -74,6 +83,7 @@ fn main() {
                 println!("Введите описание задачи:");
                 io::stdin().read_line(&mut desc).unwrap();
                 add(&mut todo_list, desc.trim().to_string());
+                desc.clear();
             }
             2 => {
                 
@@ -84,8 +94,19 @@ fn main() {
                     Ok(i) => remove(&mut todo_list, i - 1), 
                     Err(_) => println!("Неверный ввод!"),
                 }
+                idx.clear();
             }
             3 => {
+                let mut idx: String = String::new();
+                println!("Введите номер задачи для выполнения: ");
+                io::stdin().read_line(&mut idx).unwrap();
+                match idx.trim().parse::<usize>() {
+                    Ok(i) => mark_done(&mut todo_list, i - 1), 
+                    Err(_) => println!("Неверный ввод!"),
+                }
+                idx.clear();
+            }
+            4  => {
                 println!("Выход из программы.");
                 break;
             }
